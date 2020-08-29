@@ -56,14 +56,14 @@ describe CoinChange do
     assert_equal 1, coin_change.min
   end
 
-  it "should return 0 for  amount: 11, coins: [12]" do
+  it "should return -1 for  amount: 11, coins: [12]" do
     coin_change = CoinChange.new([12], 11)
 
     assert_equal -1, coin_change.min
   end
 
   it "should return 3 for  amount: 11, coins: [1, 3, 5]" do
-    coin_change = CoinChange.new([1, 2, 5], 11)
+    coin_change = CoinChange.new([1, 3, 5], 11)
 
     assert_equal 3, coin_change.min
   end
